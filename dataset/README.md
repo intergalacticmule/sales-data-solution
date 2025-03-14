@@ -79,7 +79,7 @@
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Disclaimer">Disclaimer<a class="anchor-link" href="#Disclaimer"></a></h3><p>Please note: This data was randomly generated and is intended solely for practice, learning, or testing. It does not reflect real-world sales, customers, or businesses, and should not be considered reliable for any real-time analysis or decision-making.</p>
+<h3 id="Disclaimer">Disclaimer<a class="anchor-link" href="#Disclaimer"></a></h3><p>This data was randomly generated and is intended solely for practice, learning, or testing. It does not reflect real-world sales, customers, or businesses, and should not be considered reliable for any real-time analysis or decision-making.</p>
 </div>
 </div>
 </div>
