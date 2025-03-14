@@ -940,6 +940,10 @@ dtype: int64</pre>
 </li>
 <li><p>Product_ID values are not unique (100 unique values total across 1000 rows), nor are they unique per Product_Category</p>
 </li>
+<li><p>Sales_Date contains a sufficient range of dates for time series analysis</p>
+</li>
+<li><p>Dataset contains sufficient numerical data to perform various quantitative analyses</p>
+</li>
 </ul>
 </div>
 </div>
