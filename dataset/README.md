@@ -934,15 +934,15 @@ dtype: int64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><p>The dataset consists of 1000 rows</p>
+<li><p>The dataset consists of 1000 rows.</p>
 </li>
-<li><p>The data requires no cleaning - there are no missing values or duplicates</p>
+<li><p>The data requires no cleaning - there are no missing values or duplicates.</p>
 </li>
-<li><p>Product_ID values are not unique (100 unique values total across 1000 rows), nor are they unique per Product_Category</p>
+<li><p>Product_ID values are not unique across rows, nor are they unique per Product_Category. This would result in an innacurate product-based quantitative analysis.</p>
 </li>
-<li><p>Sales_Date contains a sufficient range of dates for time series analysis</p>
+<li><p>Sales_Date contains a sufficient range of dates for time series analysis.</p>
 </li>
-<li><p>Dataset contains sufficient numerical data to perform various quantitative analyses</p>
+<li><p>Dataset contains sufficient numerical data to perform various quantitative analyses.</p>
 </li>
 </ul>
 </div>
