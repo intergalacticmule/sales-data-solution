@@ -40,33 +40,33 @@
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Columns-in-the-Dataset">Columns in the Dataset<a class="anchor-link" href="#Columns-in-the-Dataset"></a></h3><ul>
-<li><p>Product_ID: Unique identifier for each product sold. Randomly generated for practice purposes.</p>
+<li><p><b>Product_ID</b>: Unique identifier for each product sold. Randomly generated for practice purposes.</p>
 </li>
-<li><p>Sale_Date: The date when the sale occurred. Randomly selected from the year 2023.</p>
+<li><p><b>Sale_Date</b>: The date when the sale occurred. Randomly selected from the year 2023.</p>
 </li>
-<li><p>Sales_Rep: The sales representative responsible for the transaction. The dataset includes five random sales representatives (Alice, Bob, Charlie, David, Eve).</p>
+<li><p><b>Sales_Rep</b>: The sales representative responsible for the transaction. The dataset includes five random sales representatives (Alice, Bob, Charlie, David, Eve).</p>
 </li>
-<li><p>Region: The region where the sale took place. The possible regions are North, South, East, and West.</p>
+<li><p><b>Region</b>: The region where the sale took place. The possible regions are North, South, East, and West.</p>
 </li>
-<li><p>Sales_Amount: The total sales amount for the transaction, including discounts if any. Values range from 100 to 10,000 (in currency units).</p>
+<li><p><b>Sales_Amount</b>: The total sales amount for the transaction, including discounts if any. Values range from 100 to 10,000 (in currency units).</p>
 </li>
-<li><p>Quantity_Sold: The number of units sold in that transaction, randomly generated between 1 and 50.</p>
+<li><p><b>Quantity_Sold</b>: The number of units sold in that transaction, randomly generated between 1 and 50.</p>
 </li>
-<li><p>Product_Category: The category of the product sold. Categories include Electronics, Furniture, Clothing, and Food.</p>
+<li><p><b>Product_Category</b>: The category of the product sold. Categories include Electronics, Furniture, Clothing, and Food.</p>
 </li>
-<li><p>Unit_Cost: The cost per unit of the product sold, randomly generated between 50 and 5000 currency units.</p>
+<li><p><b>Unit_Cost</b>: The cost per unit of the product sold, randomly generated between 50 and 5000 currency units.</p>
 </li>
-<li><p>Unit_Price: The selling price per unit of the product, calculated to be higher than the unit cost.</p>
+<li><p><b>Unit_Price</b>: The selling price per unit of the product, calculated to be higher than the unit cost.</p>
 </li>
-<li><p>Customer_Type: Indicates whether the customer is a New or Returning customer.</p>
+<li><p><b>Customer_Type</b>: Indicates whether the customer is a New or Returning customer.</p>
 </li>
-<li><p>Discount: The discount applied to the sale, randomly chosen between 0% and 30%.</p>
+<li><p><b>Discount</b>: The discount applied to the sale, randomly chosen between 0% and 30%.</p>
 </li>
-<li><p>Payment_Method: The method of payment used by the customer (e.g., Credit Card, Cash, Bank Transfer).</p>
+<li><p><b>Payment_Method</b>: The method of payment used by the customer (e.g., Credit Card, Cash, Bank Transfer).</p>
 </li>
-<li><p>Sales_Channel: The channel through which the sale occurred. Either Online or Retail.</p>
+<li><p><b>Sales_Channel</b>: The channel through which the sale occurred. Either Online or Retail.</p>
 </li>
-<li><p>Region_and_Sales_Rep: A combined column that pairs the region and sales representative for easier tracking.</p>
+<li><p><b>Region_and_Sales_Rep</b>: A combined column that pairs the region and sales representative for easier tracking.</p>
 </li>
 </ul>
 </div>
