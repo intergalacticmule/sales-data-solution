@@ -2,7 +2,6 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
-# Define the DAG
 dag = DAG(
     'terraform_destroy_infra',
     description = 'Destroy GCP infrastructure with Terraform',
