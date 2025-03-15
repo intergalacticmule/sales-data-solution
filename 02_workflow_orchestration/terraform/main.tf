@@ -10,7 +10,7 @@ terraform {
 provider "google" {
   credentials = file(var.credentials)
   project     = var.project
-  region      = "europe-west3-a"
+  region      = var.region
 }
 
 resource "google_storage_bucket" "sales-data-analysis-bucket" {
