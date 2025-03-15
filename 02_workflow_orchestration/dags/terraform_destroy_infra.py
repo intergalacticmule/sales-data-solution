@@ -13,9 +13,8 @@ dag = DAG(
 
 terraform_destroy = BashOperator(
     task_id = 'terraform_destroy',
-    bash_command = '/home/airflow/scripts/terraform/terraform_destroy.sh ',
+    bash_command = '/home/airflow/scripts/terraform/terraform_init.sh ',
     dag=dag
 )
-
 
 terraform_destroy
