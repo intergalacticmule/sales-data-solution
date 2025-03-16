@@ -6,7 +6,6 @@ from google.cloud import storage
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 
-
 url = "https://www.kaggle.com/api/v1/datasets/download/vinothkannaece/sales-dataset/"
 destination_dir = "/home/airflow/files/GCP/sales_data/"
 file_name_zipped = "sales_data.zip"
