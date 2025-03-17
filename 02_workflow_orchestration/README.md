@@ -139,4 +139,4 @@ We have now created a GCS bucket, and a BigQuery dataset for our needs.
 
 This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage.
 
-Our goals for this section are now complete.
+We now have our source file securely stored on the cloud. Our goals for this section are now complete.
