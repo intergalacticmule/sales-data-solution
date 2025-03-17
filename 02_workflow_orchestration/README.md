@@ -10,6 +10,8 @@ We have chosen Apache Airflow for our workflow orchestration, containerized via 
 
 In order to get everything up and running, we must first clone the repo, start our Dockerized Airflow, create a new project in Google Console, and raise the necessary infrastructure on the cloud via our Terraform DAGs, and finally transfer the data from source to the cloud:
 
+### Get dockerized Airflow services up and running
+
 1. Clone the repository:
 
 ```bash
@@ -43,7 +45,7 @@ $ docker compose build
 $ docker compose up airflow-init
 ```
 
-- Start all services:
+- Start all services in detached mode:
 
 ```bash
 $ docker compose up -d
@@ -54,7 +56,7 @@ This leaves us with the following folder structure:
 ```bash
 02_workflow_orchestration/
 ├── config #Airflow config folder
-├── dags #DAGS folder
+├── dags #DAGs folder
 │   ├── 01_terraform_init.py #DAG that performs terraform init
 │   ├── 02_terraform_raise_infra.py #DAG that performs terraform apply
 │   ├── 03_upload_data_to_gcp.py #DAG that retrieves source file and uploads it to GCP
@@ -74,3 +76,4 @@ This leaves us with the following folder structure:
     ├── main.tf #main Terraform file
     └── variables.tf #Terraform variables file
 ```
+Refering to lines 76-82 of [docker-compose.yaml](./docker-compose.yaml), we can see that all of our subdirectories are mapped to directories in the Airflow container. Most notably, folders _dags_, _terraform_, and _scripts_ are mapped to the home folder of our newly created Airflow user and are directly linked with the logic we will be implementing shortly.
