@@ -33,3 +33,7 @@ Before we begin implementing our solution, we must first inspect the dataset to 
 [Dataset Information and Exploration](./01_dataset/README.md)
 
 The above document can also be found as a notebook [here](./01_dataset/dataset_exploration.ipynb).
+
+## Workflow Orchestration
+
+In this part of the solution we apply the first three points of the [Action Plan](#action-plan), namely Apache Airflow, Terraform, and Google Cloud Storage.
