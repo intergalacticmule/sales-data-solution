@@ -109,5 +109,5 @@ Hit sign in, and you should find yourself in the main Airflow UI:
 
 ![Exporting GCP Service Account Key](/images/gcp_export_key.gif)
 
-Now save this key inside the project folder in `/sales-data-solution/02_workflow_orchestration/terraform/keys/` named `my-creds.json`.
+Now save this key inside the project folder in `../sales-data-solution/02_workflow_orchestration/terraform/keys/` named `my-creds.json`.
 
