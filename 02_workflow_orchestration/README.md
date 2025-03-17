@@ -45,10 +45,10 @@ $ docker compose build
 $ docker compose up airflow-init
 ```
 
-- Start all services in detached mode:
+- Start all services. You can also add `-d` at the end of this command to run in detached mode, however this is not recommended for the first run as you will surely miss out on any errors from the startup logs:
 
 ```bash
-$ docker compose up -d
+$ docker compose up 
 ```
 
 This leaves us with the following folder structure:
@@ -76,4 +76,21 @@ This leaves us with the following folder structure:
     ├── main.tf #main Terraform file
     └── variables.tf #Terraform variables file
 ```
-Refering to lines 76-82 of [docker-compose.yaml](./docker-compose.yaml), we can see that all of our subdirectories are mapped to directories in the Airflow container. Most notably, folders _dags_, _terraform_, and _scripts_ are mapped to the home folder of our newly created Airflow user and are directly linked with the logic we will be implementing shortly.
+Refering to lines 76-82 of [docker-compose.yaml](./docker-compose.yaml), we can see that all of our subdirectories are mapped to directories in the Airflow container. Most notably, folders _dags_, _terraform_, and _scripts_ are mapped to the home folder of our newly created Airflow user, and are directly tied to the logic we will be implementing shortly.
+
+After a couple of minutes after executing the `docker compose up`, the webserver should be running. Navitgate to http://localhost:8080/home in your browser. You should be greeted by a sign in form like so:
+
+![Airflow sign-in form](/images/airflow_sign_in.png)
+
+The correct login credentials are:
+
+```
+Username: airflow
+Password: airflow
+```
+
+Hit sign up, and you should find yourself in the main Airflow UI:
+
+![Airflow UI](/images/airflow_ui.png)
+
+### Create project in Google Console
