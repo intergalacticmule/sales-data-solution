@@ -10,17 +10,17 @@ Our plan is to create a data warehouse around their data, and to then build an a
 
 We will be employing the following technologies within this project:
 
-1. Apache Ariflow - Pipeline orchestration 
+1. __Apache Ariflow__ - Pipeline orchestration 
 
-2. Terraform - Deployment of cloud infrastructure
+2. __Terraform__ - Deployment of cloud infrastructure
 
-3. Google Cloud Storage - Raw data storage
+3. __Google Cloud Storage__ - Raw data storage
 
-4. Google BigQuery - Data warehousing
+4. __Google BigQuery__ - Data warehousing
 
-5. dbt - Data warehouse modeling
+5. __dbt__ - Data warehouse modeling
 
-6. Looker Studio - Data visualization
+6. __Looker Studio__ - Data visualization
 
 The diagram below provides a high-level visual representation of the solution we are implementing for our customer:
 
