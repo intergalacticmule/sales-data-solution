@@ -31,3 +31,5 @@ The diagram below provides a high-level visual representation of the solution we
 Before we begin implementing our solution, we must first inspect the dataset to make sure that the data quality suits our needs:
 
 [Dataset Information and Exploration](./01_dataset/README.md)
+
+The above document can also be found as a notebook [HERE](./01_dataset/dataset_exploration.ipynb).
