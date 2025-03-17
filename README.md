@@ -34,7 +34,7 @@ Before we begin implementing our solution, we must first inspect the dataset to 
 
 The above document can also be found as a notebook [here](./01_dataset/dataset_exploration.ipynb). 
 
-Keep in mind that in order to be able to run the notebook, you must first have _Python_ installed on your machine with _pip_ as the package manager. Then you can install Jupyter Notebook:
+Keep in mind that in order to be able to run the notebook, you must first have _Python_ installed on your machine with _pip_ as the default package manager. Then you can install Jupyter Notebook:
 
 ```bash 
 pip install notebook
