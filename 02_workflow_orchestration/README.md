@@ -8,16 +8,69 @@ We have chosen Apache Airflow for our workflow orchestration, containerized via 
 
 ## Setup
 
+In order to get everything up and running, we must first clone the repo, start our Dockerized Airflow, create a new project in Google Console, and raise the necessary infrastructure on the cloud via our Terraform DAGs, and finally transfer the data from source to the cloud:
+
 1. Clone the repository:
 
 ```bash
 $ git clone https://github.com/intergalacticmule/sales-data-solution.git
 ```
 
-2. Navigate to folder 02_workflow_orchestration:
+2. Navigate to folder _02_workflow_orchestration_:
 
 ```bash
 $ cd 02_workflow_orchestration
 ```
 
-3. 
+3. Set up our Dockerized Airflow:
+
+- Create the necessary directories:
+
+```bash
+$ mkdir -p ./logs ./plugins ./config
+$ echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
+
+- Build the images from [docker-compose.yaml](./docker-compose.yaml). Note the use of [Dockerfile](./Dockerfile) to install Terraform on our Airflow image:
+
+```bash
+$ docker compose build
+```
+
+- Run Airflow database migrations and create user
+
+```bash
+$ docker compose up airflow-init
+```
+
+- Start all services:
+
+```bash
+$ docker compose up -d
+```
+
+This leaves us with the following folder structure:
+
+```bash
+02_workflow_orchestration/
+├── config #Airflow config folder
+├── dags #DAGS folder
+│   ├── 01_terraform_init.py #DAG that performs terraform init
+│   ├── 02_terraform_raise_infra.py #DAG that performs terraform apply
+│   ├── 03_upload_data_to_gcp.py #DAG that retrieves source file and uploads it to GCP
+│   └── terraform_destroy_infra.py #DAG that performs terraform destroy
+├── docker-compose.yaml #docker compose file containing all our configured service images
+├── Dockerfile #Dockerfile installing Terraform to Airflow image
+├── logs #Airflow logs folder 
+├── plugins #Airflow plugins folder
+├── README.md #git README file
+├── scripts #scripts folder
+│   ├── terraform_apply.sh #bash script used by DAG to run terraform apply command
+│   ├── terraform_destroy.sh #bash script used by DAG to run terraform apply command
+│   └── terraform_init.sh #bash script used by DAG to run terraform apply command
+└── terraform #Terraform folder
+    ├── keys #keys folder
+    │   └── my-creds.json #service account key file
+    ├── main.tf #main Terraform file
+    └── variables.tf #Terraform variables file
+```
