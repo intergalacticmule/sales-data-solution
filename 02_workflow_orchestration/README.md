@@ -110,7 +110,7 @@ Hit sign in, and you should find yourself in the main Airflow UI:
 
 Now save this key inside the project folder in `../sales-data-solution/02_workflow_orchestration/terraform/keys/` named `my-creds.json`.
 
-### Update project name in variables.tf
+### Update project ID in variables.tf
 
 Open file [variables.tf](./terraform/variables.tf) and update it with your project's ID here:
 
