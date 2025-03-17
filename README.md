@@ -32,4 +32,4 @@ Before we begin implementing our solution, we must first inspect the dataset to 
 
 [Dataset Information and Exploration](./01_dataset/README.md)
 
-The above document can also be found as a notebook [HERE](./01_dataset/dataset_exploration.ipynb).
+The above document can also be found as a notebook [here](./01_dataset/dataset_exploration.ipynb).
