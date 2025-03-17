@@ -18,7 +18,7 @@ In order to get everything up and running, we must first clone the repo, start o
 $ git clone https://github.com/intergalacticmule/sales-data-solution.git
 ```
 
-2. Navigate to folder _02_workflow_orchestration_:
+2. Navigate to folder 02_workflow_orchestration:
 
 ```bash
 $ cd 02_workflow_orchestration
@@ -39,7 +39,7 @@ $ echo -e "AIRFLOW_UID=$(id -u)" > .env
 $ docker compose build
 ```
 
-- Run Airflow database migrations and create user
+- Run Airflow database migrations and create user:
 
 ```bash
 $ docker compose up airflow-init
