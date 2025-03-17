@@ -27,3 +27,7 @@ The diagram below provides a high-level visual representation of the solution we
 ![Pipeline diagram](./images/diagram.png)
 
 ## The Dataset
+
+Before we begin implementing our solution, we must first inspect the dataset to make sure that the data quality suits our needs:
+
+[Dataset Information and Exploration](./01_dataset/README.md)
