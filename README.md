@@ -46,8 +46,8 @@ And start the service:
 $ jupyter notebook
 ```
 
-Now, you should have the service up and running at http://localhost:8888. You can now navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb) and run it from the Jupyter Notebook Web UI.
+Now, you should have the service up and running at http://localhost:8888. You can then navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb) and run it from the Jupyter Notebook Web UI.
 
 ## Workflow Orchestration
 
-In this part of the solution we apply the first three points of the [Action Plan](#action-plan), namely Apache Airflow, Terraform, and Google Cloud Storage.
+In this part of the solution, we apply the first three points of the [Action Plan](#action-plan), namely Apache Airflow, Terraform, and Google Cloud Storage.
