@@ -32,7 +32,21 @@ Before we begin implementing our solution, we must first inspect the dataset to 
 
 [Dataset Information and Exploration](./01_dataset/README.md)
 
-The above document can also be found as a notebook [here](./01_dataset/dataset_exploration.ipynb).
+The above document can also be found as a notebook [here](./01_dataset/dataset_exploration.ipynb). 
+
+Keep in mind that in order to be able to run the notebook, you must first have _Python_ installed on your machine with _pip_ as the package manager. Then you can install Jupyter Notebook:
+
+```bash 
+pip install notebook
+```
+
+And then start the service:
+
+```bash
+jupyter notebook
+```
+
+Now, you should have the service up and running at http://localhost:8888. You can now navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb) and run it from the Jupyter Notebook Web UI.
 
 ## Workflow Orchestration
 
