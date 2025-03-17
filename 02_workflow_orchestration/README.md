@@ -78,7 +78,7 @@ This leaves us with the following folder structure:
 ```
 Refering to lines 76-82 of [docker-compose.yaml](./docker-compose.yaml), we can see that all of our subdirectories are mapped to directories in the Airflow container. Most notably, folders _dags_, _terraform_, and _scripts_ are mapped to the home folder of our newly created Airflow user, and are directly tied to the logic we will be implementing shortly.
 
-After a couple of minutes after executing the `docker compose up`, the webserver should be running. Navitgate to http://localhost:8080/home in your browser. You should be greeted by a sign in form like so:
+After a couple of minutes after executing the `docker compose up` command, the webserver should be running. Navitgate to http://localhost:8080/home in your browser. You should be greeted by a sign in form like so:
 
 ![Airflow sign-in form](/images/airflow_sign_in.png)
 
