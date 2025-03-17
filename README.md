@@ -1,4 +1,4 @@
-# <div align="center">Sales Data Analysis</div>
+# <div align="center">Sales Data Warehousing & Analysis</div>
 
 ## Problem Definition
 
