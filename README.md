@@ -10,17 +10,19 @@ Our plan is to create a data warehouse around their data, and to then build an a
 
 We will be employing the following technologies within this project:
 
-1. __Apache Ariflow__ - Pipeline orchestration 
+1. __Docker__ - containerization
 
-2. __Terraform__ - Deployment of cloud infrastructure
+2. __Apache Ariflow__ - Pipeline orchestration 
 
-3. __Google Cloud Storage__ - Raw data storage
+3. __Terraform__ - Deployment of cloud infrastructure
 
-4. __Google BigQuery__ - Data warehousing
+4. __Google Cloud Storage__ - Raw data storage
 
-5. __dbt__ - Data warehouse modeling
+5. __Google BigQuery__ - Data warehousing
 
-6. __Looker Studio__ - Data visualization
+6. __dbt__ - Data warehouse modeling
+
+7. __Looker Studio__ - Data visualization
 
 The diagram below provides a high-level visual representation of the solution we are implementing for our customer:
 
@@ -50,6 +52,6 @@ Now, you should have the service up and running at http://localhost:8888. You ca
 
 ## Workflow Orchestration
 
-In this part of the solution, we apply the first three points of the [Action Plan](#action-plan), namely Apache Airflow , Terraform, and Google Cloud Storage.
+In this part of the solution, we apply the first four points of the [Action Plan](#action-plan), namely Docker, Apache Airflow , Terraform, and Google Cloud Storage.
 
 Please refer to [Workflow Orchestration](./02_workflow_orchestration/README.md) for a detailed explanation of the work performed, and how to reproduce it.
