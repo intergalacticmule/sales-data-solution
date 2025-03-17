@@ -40,7 +40,7 @@ Keep in mind that in order to be able to run the notebook, you must first have _
 $ pip install notebook
 ```
 
-And then start the service:
+And start the service:
 
 ```bash
 $ jupyter notebook
