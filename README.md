@@ -10,7 +10,7 @@ Our plan is to create a data warehouse around their data, and to then build an a
 
 We will be employing the following technologies within this project:
 
-1. __Docker__ - containerization
+1. __Docker__ - Containerization
 
 2. __Apache Ariflow__ - Pipeline orchestration 
 
