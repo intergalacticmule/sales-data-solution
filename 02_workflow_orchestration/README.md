@@ -110,3 +110,31 @@ Hit sign in, and you should find yourself in the main Airflow UI:
 
 Now save this key inside the project folder in `../sales-data-solution/02_workflow_orchestration/terraform/keys/` named `my-creds.json`.
 
+### Update project name in variables.tf
+
+Open file [variables.tf](./terraform/variables.tf) and update it with your project's ID here:
+
+```
+variable "project" {
+  description = "Project"
+  default     = "sales-data-analysis-453808"
+}
+```
+
+### Execute 01_terraform_init DAG
+
+![Execute Terraform Init](/images/terraform_init.gif)
+
+This DAG can be inspected [here](./dags/01_terraform_init.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform_init.sh), which basically navigates to the Terraform directory on the container and performs `terraform init`.
+
+We have now initialized the Terraform working directory
+
+### Execute 02_terraform_apply DAG
+
+This DAG can be inspected [here](./dags/02_terraform_raise_infra.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform_apply.sh), which basically navigates to the Terraform directory on the container and performs `terraform apply`.
+
+We have now created a GCS bucket, and a BigQuery dataset for our needs.
+
+### Execute 03_upload_data_to_gcp DAG
+
+This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage.
