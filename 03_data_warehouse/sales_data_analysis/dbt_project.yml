@@ -40,3 +40,7 @@ models:
     +persist_docs:
       relation: true
       columns: true
+    staging:
+      +schema: staging
+    core:
+      +schema: sales_data_analysis_dataset
