@@ -12,7 +12,7 @@ dag = DAG(
 
 terraform_init = BashOperator(
     task_id = 'terraform_init',
-    bash_command =' /home/airflow/scripts/terraform_init.sh ',
+    bash_command =' /home/airflow/scripts/terraform/init.sh ',
     dag = dag
 )
 

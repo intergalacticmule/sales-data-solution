@@ -11,7 +11,7 @@ dag = DAG(
 )
 terraform_apply = BashOperator(
     task_id = 'terraform_apply',
-    bash_command =' /home/airflow/scripts/terraform_apply.sh ',
+    bash_command =' /home/airflow/scripts/terraform/apply.sh ',
     dag = dag
 )
 terraform_apply
