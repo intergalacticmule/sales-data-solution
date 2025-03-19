@@ -12,7 +12,7 @@ with DAG(
     
     terraform_apply = BashOperator(
         task_id = 'terraform_apply',
-        bash_command =' /home/airflow/scripts/terraform/apply.sh ',
+        bash_command =' /home/airflow/scripts/terraform/apply.sh '
     )
     
 terraform_apply
