@@ -45,53 +45,53 @@ def upload_file(file, bucket_name, local_dir):
     else:
         raise Exception(f"Failed to upload file {file} to bucket {bucket_name}.")
 
-dag = DAG(
+with DAG(
     "03_upload_data_to_gcp",
     description = "Fetch data file and upload it to GCP",
     schedule_interval = None,
     start_date = datetime(2025, 3, 14),
     catchup=False
-)
+) as dag:
 
-create_directory = PythonOperator(
-    task_id = "create_directory",
-    python_callable = create_dir,
-    op_kwargs = {"dir": destination_dir},
-    dag = dag
-)
+    create_directory = PythonOperator(
+        task_id = "create_directory",
+        python_callable = create_dir,
+        op_kwargs = {"dir": destination_dir},
+        dag = dag
+    )
 
-download_data = PythonOperator(
-    task_id = "download_data",
-    python_callable = download_file,
-    op_kwargs = {"url": url, "destination": destination_dir + file_name_zipped},
-    dag = dag
-)
+    download_data = PythonOperator(
+        task_id = "download_data",
+        python_callable = download_file,
+        op_kwargs = {"url": url, "destination": destination_dir + file_name_zipped},
+        dag = dag
+    )
 
-unzip_data = PythonOperator(
-    task_id = "unzip_data",
-    python_callable = unzip_file,
-    op_kwargs = {"zip_dir": destination_dir, "zip_name": file_name_zipped, "file_name":file_name_unzipped},
-    dag = dag
-)
+    unzip_data = PythonOperator(
+        task_id = "unzip_data",
+        python_callable = unzip_file,
+        op_kwargs = {"zip_dir": destination_dir, "zip_name": file_name_zipped, "file_name":file_name_unzipped},
+        dag = dag
+    )
 
-delete_zip = PythonOperator (
-    task_id = "delete_zip",
-    python_callable = delete_file,
-    op_kwargs = {"file": destination_dir + file_name_zipped},
-    dag = dag
-)
+    delete_zip = PythonOperator (
+        task_id = "delete_zip",
+        python_callable = delete_file,
+        op_kwargs = {"file": destination_dir + file_name_zipped},
+        dag = dag
+    )
 
-upload_to_gcp = PythonOperator (
-    task_id = "upload_to_gcp",
-    python_callable = upload_file,
-    op_kwargs = {"file": destination_dir + file_name_unzipped, "bucket_name": bucket_name, "local_dir": destination_dir}
-)
+    upload_to_gcp = PythonOperator (
+        task_id = "upload_to_gcp",
+        python_callable = upload_file,
+        op_kwargs = {"file": destination_dir + file_name_unzipped, "bucket_name": bucket_name, "local_dir": destination_dir}
+    )
 
-delete_csv = PythonOperator (
-    task_id = "delete_csv",
-    python_callable = delete_file,
-    op_kwargs = {"file": destination_dir + file_name_unzipped},
-    dag = dag
-)
+    delete_csv = PythonOperator (
+        task_id = "delete_csv",
+        python_callable = delete_file,
+        op_kwargs = {"file": destination_dir + file_name_unzipped},
+        dag = dag
+    )
 
 create_directory >> download_data >> unzip_data >> delete_zip >> upload_to_gcp >> delete_csv

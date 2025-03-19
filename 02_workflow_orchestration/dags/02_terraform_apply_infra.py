@@ -2,16 +2,17 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
-dag = DAG(
+with DAG(
     '02_terraform_raise_infra',
     description = 'Raise GCP infrastructure with Terraform',
     schedule_interval = None,
     start_date = datetime(2025, 3, 14),
     catchup=False
-)
-terraform_apply = BashOperator(
-    task_id = 'terraform_apply',
-    bash_command =' /home/airflow/scripts/terraform/apply.sh ',
-    dag = dag
-)
+) as dag:
+    
+    terraform_apply = BashOperator(
+        task_id = 'terraform_apply',
+        bash_command =' /home/airflow/scripts/terraform/apply.sh ',
+    )
+    
 terraform_apply
