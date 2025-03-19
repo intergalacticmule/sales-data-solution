@@ -5,7 +5,7 @@ variable "credentials" {
 
 variable "project" {
   description = "Project"
-  default     = "sales-data-analysis-453808"
+  default     = "sales-data-analysis-453808" #Your project ID here
 }
 
 variable "region" {
