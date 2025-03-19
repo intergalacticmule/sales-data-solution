@@ -1,0 +1,13 @@
+sales_data_analysis: 
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            keyfile: /home/airflow/.dbt/my-creds.json
+            project: sales-data-analysis-453808
+            dataset: sales_data_analysis_dataset
+            threads: 1
+            timeout_seconds: 300
+            location: europe-west3
+            priority: interactive
