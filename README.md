@@ -48,7 +48,7 @@ And start the service:
 $ jupyter notebook
 ```
 
-Now you should have the service up and running at http://localhost:8888. You can then navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb) and run it from the Jupyter Notebook Web UI.
+Now you should have the service up and running at http://localhost:8888. You can navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb) and run it from the Jupyter Notebook Web UI.
 
 ## Workflow Orchestration
 
