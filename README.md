@@ -26,7 +26,7 @@ We will be employing the following technologies within this project:
 
 The diagram below provides a high-level visual representation of the solution we are implementing for our customer:
 
-![Pipeline diagram](./images/workflow_diagram.png?)
+![Pipeline diagram](./images/workflow_diagram.png)
 
 ## The Dataset
 
