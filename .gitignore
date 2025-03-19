@@ -18,3 +18,4 @@ terraform.rc
 .terraform.lock*
 .env
 **my-creds.json
+**.user.yml
