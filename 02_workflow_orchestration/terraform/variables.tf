@@ -18,13 +18,14 @@ variable "location" {
   default     = "europe-west3"
 }
 
-variable "bq_dataset_name" {
-  description = "My BigQuery Dataset Name"
-  default     = "sales_data_analysis_dataset"
+variable "bq_datasets" {
+  description = "My First BigQuery Datasets"
+  default     = ["sales_data_analysis_dataset", "staging"]
 }
 
+
 variable "gcs_bucket_name" {
-  description = "My Storage Bucket Name"
+  description = "My Storage Bucket"
   default     = "sales_data_analysis_bucket"
 }
 

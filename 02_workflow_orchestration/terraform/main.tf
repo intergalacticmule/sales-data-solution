@@ -29,7 +29,9 @@ resource "google_storage_bucket" "sales-data-analysis-bucket" {
 }
 
 resource "google_bigquery_dataset" "sales-data-analysis-dataset" {
-  dataset_id = var.bq_dataset_name
+  dataset_id = "${var.bq_datasets[count.index]}"
+  count = length("${var.bq_datasets}")
   location   = var.location
   delete_contents_on_destroy = true
 }
+
