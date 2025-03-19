@@ -81,6 +81,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/terraform:/home/airflow/terraform
     - ${AIRFLOW_PROJ_DIR:-.}/scripts:/home/airflow/scripts
     - ${AIRFLOW_PROJ_DIR:-.}/dbt:/home/airflow/.dbt
+    - ../03_data_warehouse/sales_data_analysis:/home/airflow/sales_data_analysis
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
