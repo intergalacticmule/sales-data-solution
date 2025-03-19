@@ -62,6 +62,7 @@ This leaves us with the following folder structure:
 │   ├── 03_upload_data_to_gcp.py #DAG that retrieves source file and uploads it to GCP
 │   └── terraform_destroy_infra.py #DAG that performs terraform destroy
 ├── dbt #dbt-core folder
+│   ├── .user.yml #dbt cookie
 │   ├── my-creds.json #dbt service account
 │   └── profiles.yml #dbt-core config
 ├── docker-compose.yaml #docker compose file containing all our configured service images
