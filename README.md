@@ -54,6 +54,6 @@ Now you should have the service up and running at http://localhost:8888. You can
 
 In this part of the solution, we apply the first four points of the [Action Plan](#action-plan), namely Docker, Apache Airflow, Terraform, and Google Cloud Storage.
 
-We will also be installing and setting up dbt on our Docker image in this section, but we will not be using it just yet
+We will also be installing and setting up dbt on our Docker image in this section, but we will not be using it just yet.
 
 Please refer to [Workflow Orchestration](./02_workflow_orchestration/README.md) for a detailed explanation of the work performed, and how to reproduce it.
