@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this section we will examine how we achieve automating the data pipeline - from raising the necessary cloud infrastructure, through retrieving the data from source, to landing it safely in our data storage.
+In this section we will examine how we will automate the data pipeline - from raising the necessary cloud infrastructure, through retrieving the data from source, to landing it safely in our data storage.
 
 We have chosen Apache Airflow for our workflow orchestration, containerized via Docker. Alongisde it we have Terraform, which is an IaC tool that will help us deploy the cloud infrastructure we need. Additionally, we will be installing dbt, which will help us build our warehouse model.
 
