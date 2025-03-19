@@ -81,7 +81,7 @@ This leaves us with the following folder structure:
     └── variables.tf #Terraform variables file
 ```
 
-A couple of minutes after executing the _`docker compose up`_ command, the webserver should be up and running. To check this, execute:
+A couple of minutes after executing the `docker compose up` command, the webserver should be up and running. To check this, execute:
 
 ```bash
 docker ps
