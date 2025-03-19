@@ -81,7 +81,15 @@ This leaves us with the following folder structure:
     └── variables.tf #Terraform variables file
 ```
 
-A couple of minutes after executing the _`docker compose up`_ command, the webserver should be up and running. Navitgate to http://localhost:8080/home in your browser. You should be greeted by a sign in form like so:
+A couple of minutes after executing the _`docker compose up`_ command, the webserver should be up and running. To check this, execute:
+
+```bash
+docker ps
+```
+
+The `CREATED` column of the command output should indicate all the containers are healthy, i.e. `Up X seconds (healthy)`, and none should indicate `Up X seconds (health: starting)`. If the latter is the case, wait a little bit more for the processes to start.
+
+ Navitgate to http://localhost:8080/home in your browser. You should be greeted by a sign-in form like so:
 
 ![Airflow sign-in form](/images/airflow_sign_in.png)
 
@@ -106,11 +114,11 @@ Hit sign in, and you should find yourself in the main Airflow UI:
 
 ### Create service accounts 
 
-Create a service account for Airflow with _BigQuery Admin_ and _Storage Admin_ roles:
+Create a service account for Airflow with _BigQuery Admin_ and _Storage Admin_ roles, so that Airflow is able to raise the necessary infrastructure via Terraform:
 
 ![Creating GCP Service Account](/images/gcp_service_account.gif)
 
-Repeating the steps above, create another service account for dbt, and add _BigQuery Admin_ and _Storage Object Viewer_ roles to it.
+Repeating the steps above, create another service account for dbt, and add _BigQuery Admin_ and _Storage Object Viewer_ roles to it. These are necessary so that dbt can create tables and read files from our bucket respectively.
 
 ### Export service account keys
 
@@ -124,24 +132,35 @@ Repeat the same step for the dbt account, saving the key inside `.../sales-data-
 
 Open file [variables.tf](./terraform/variables.tf) and update it with your project's ID here:
 
-```
+```yml
 variable "project" {
   description = "Project"
-  default     = "sales-data-analysis-453808"
+  default     = "sales-data-analysis-453808" #Your project ID here
 }
 ```
 
+### Update project ID in profiles.yml 
+
+Open file [project.yml](./dbt/profiles.yml) and update it with your project's ID here:
+
+```yml
+project: sales-data-analysis-453808 #Your project ID here
+```
+
+
 ### Execute 01_terraform_init DAG
+
+Navigate back to [Airflow's web UI](http://localhost:8080/home):
 
 ![Execute Terraform Init](/images/terraform_init.gif)
 
-This DAG can be inspected [here](./dags/01_terraform_init.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform_init.sh), which basically navigates to the Terraform directory on the container and performs `terraform init`.
+This DAG can be inspected [here](./dags/01_terraform_init.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/init.sh), which basically navigates to the Terraform directory on the container and performs `terraform init`.
 
 We have now initialized the Terraform working directory
 
 ### Execute 02_terraform_apply DAG
 
-This DAG can be inspected [here](./dags/02_terraform_raise_infra.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform_apply.sh), which basically navigates to the Terraform directory on the container and performs `terraform apply`.
+This DAG can be inspected [here](./dags/02_terraform_apply_infra.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/apply.sh), which basically navigates to the Terraform directory on the container and performs `terraform apply`.
 
 We have now created a GCS bucket, and a BigQuery dataset for our needs.
 
@@ -149,4 +168,4 @@ We have now created a GCS bucket, and a BigQuery dataset for our needs.
 
 This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage.
 
-We now have our source file securely stored on the cloud. Our goals for this section are now complete.
+We now have our source file securely stored on the cloud. Our goals for this section are thus complete.
