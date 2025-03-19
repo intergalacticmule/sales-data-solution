@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: staging
-    schema: sales_data_analysis_dataset
+    schema: staging
     tables:
       - name: st_sales_data
         description: Sales data staging table
