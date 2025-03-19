@@ -3,7 +3,7 @@ from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
 with DAG(
-    '02_terraform_raise_infra',
+    '02_terraform_apply_infra',
     description = 'Raise GCP infrastructure with Terraform',
     schedule_interval = None,
     start_date = datetime(2025, 3, 14),
