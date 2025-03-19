@@ -150,7 +150,7 @@ project: sales-data-analysis-453808 #Your project ID here
 
 ### Execute 01_terraform_init DAG
 
-Navigate back to [Airflow's web UI](http://localhost:8080/home):
+Navigate back to [Airflow's web UI](http://localhost:8080/home), and execute DAG 01_terraform_init:
 
 ![Execute Terraform Init](/images/terraform_init.gif)
 
@@ -160,11 +160,15 @@ We have now initialized the Terraform working directory
 
 ### Execute 02_terraform_apply DAG
 
+Navigate back to the Airflow home page and execute DAG 02_terraform_apply.
+
 This DAG can be inspected [here](./dags/02_terraform_apply_infra.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/apply.sh), which basically navigates to the Terraform directory on the container and performs `terraform apply`.
 
-We have now created a GCS bucket, and a BigQuery dataset for our needs.
+We have now created a GCS bucket, and two BigQuery datasets for our needs.
 
 ### Execute 03_upload_data_to_gcp DAG
+
+Navigate back to the Airflow home page and execute DAG 03_upload_data_to_gcp.
 
 This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage.
 
