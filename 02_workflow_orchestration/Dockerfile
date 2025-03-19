@@ -16,3 +16,8 @@ sudo tee /etc/apt/sources.list.d/hashicorp.list
 RUN sudo apt update
 RUN echo Y | sudo apt-get install terraform
 
+USER airflow
+
+RUN pip install dbt-core
+RUN pip install dbt-bigquery
+
