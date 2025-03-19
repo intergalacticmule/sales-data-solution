@@ -33,7 +33,7 @@ $ mkdir -p ./logs ./plugins ./config
 $ echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 
-- Build the images from [docker-compose.yaml](./docker-compose.yaml). Note the use of [Dockerfile](./Dockerfile) to install Terraform on our Airflow image:
+- Build the images from [docker-compose.yaml](./docker-compose.yaml). Note the use of [Dockerfile](./Dockerfile) to install Terraform and dbt on our Airflow image:
 
 ```bash
 $ docker compose build
@@ -100,15 +100,21 @@ Hit sign in, and you should find yourself in the main Airflow UI:
 
 ![Creating GCP Project](/images/gcp_project.gif)
 
-### Create service account
+### Create service accounts 
+
+Create a service account for Airflow with _BigQuery Admin_ and _Storage Admin_ roles:
 
 ![Creating GCP Service Account](/images/gcp_service_account.gif)
 
-### Export service account key
+Repeating the steps above, create another service account for dbt, and add _BigQuery Admin_ and _Storage Object Viewer_ roles to it.
+
+### Export service account keys
 
 ![Exporting GCP Service Account Key](/images/gcp_export_key.gif)
 
-Now save this key inside the project folder in `../sales-data-solution/02_workflow_orchestration/terraform/keys/` named `my-creds.json`.
+Save this key inside the project folder in `.../sales-data-solution/02_workflow_orchestration/terraform/keys/` named `my-creds.json`.
+
+Repeat the same step for the dbt account, saving the key inside `.../sales-data-solution/02_workflow_orchestration/dbt/` named `my-creds.json`
 
 ### Update project ID in variables.tf
 
