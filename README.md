@@ -2,7 +2,7 @@
 
 ## Problem Definition
 
-As a data engineerig/analytics contractor, we have been approached by a new retailer store company that lack a solution for storing and analyzing their sales data. They want us to help them build an end-to-end solution around their data set, and to assist in analyzing and optimizing their data. 
+As a data engineerig/analytics contractor, we have been approached by a new retailer store company that lack a solution for storing and analyzing their sales data for 2023. They want us to help them build an end-to-end solution around their data set, and to assist in analyzing and optimizing their data. 
 
 Our plan is to create a data warehouse around their data, and to then build an analytics solution on top, providing actionable insights that will help the company understand trends, identify key opportunities, enhance their sales strategies for sustained growth and success, make data-informed decisions, and improve overall business performance.
 
@@ -27,6 +27,16 @@ We will be employing the following technologies within this project:
 The diagram below provides a high-level visual representation of the solution we are implementing for our customer:
 
 ![Pipeline diagram](./images/workflow_diagram.png)
+
+## Prerequisites
+
+### Docker Engine
+
+To find out how to install Docker Engine, please visit https://docs.docker.com/engine/install/.
+
+### Docker Compose 
+
+Depending on your OS and/or your installation method of choice, you might need to install Docker Compose. Please visit https://docs.docker.com/compose/install/ to learn more.
 
 ## The Dataset
 
