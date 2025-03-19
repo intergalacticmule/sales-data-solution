@@ -37,3 +37,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   sales_data_analysis:
+    +persist_docs:
+      relation: true
+      columns: true
