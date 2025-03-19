@@ -61,6 +61,9 @@ This leaves us with the following folder structure:
 │   ├── 02_terraform_raise_infra.py #DAG that performs terraform apply
 │   ├── 03_upload_data_to_gcp.py #DAG that retrieves source file and uploads it to GCP
 │   └── terraform_destroy_infra.py #DAG that performs terraform destroy
+├── dbt #dbt-core folder
+│   ├── my-creds.json #dbt service account
+│   └── profiles.yml #dbt-core config
 ├── docker-compose.yaml #docker compose file containing all our configured service images
 ├── Dockerfile #Dockerfile installing Terraform to Airflow image
 ├── logs #Airflow logs folder 
@@ -72,7 +75,7 @@ This leaves us with the following folder structure:
 │   └── terraform_init.sh #bash script used by DAG to run terraform apply command
 └── terraform #Terraform folder
     ├── keys #keys folder
-    │   └── my-creds.json #service account key file
+    │   └── my-creds.json #Airflow service account key file
     ├── main.tf #main Terraform file
     └── variables.tf #Terraform variables file
 ```
