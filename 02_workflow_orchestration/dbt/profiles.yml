@@ -5,7 +5,7 @@ sales_data_analysis:
             type: bigquery
             method: service-account
             keyfile: /home/airflow/.dbt/my-creds.json
-            project: sales-data-analysis-453808
+            project: sales-data-analysis-453808 #Replace value with your project ID
             dataset: sales_data_analysis_dataset
             threads: 1
             timeout_seconds: 300
