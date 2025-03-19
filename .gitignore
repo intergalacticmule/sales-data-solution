@@ -3,7 +3,6 @@
 .ipynb*
 *logs/
 *__pycache__*
-*keys/
 **/.terraform/*
 *.tfstate
 *.tfstate.*
@@ -18,3 +17,4 @@ override.tf.json
 terraform.rc
 .terraform.lock*
 .env
+**my-creds.json
