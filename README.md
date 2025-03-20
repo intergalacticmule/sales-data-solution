@@ -58,7 +58,13 @@ And start the service:
 $ jupyter notebook
 ```
 
-Now you should have the service up and running at http://localhost:8888. You can navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb), download it, and run it locally from the Jupyter Notebook Web UI.
+Now you should have the service up and running at http://localhost:8888. You can navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb), download it, and load it locally from the Jupyter Notebook Web UI.
+
+Make sure you adjust the file dowload path below to reflect your filesystem before running the notebook:
+
+```python
+zip_dir = "/home/intergalacticmule/repos/sales-data-analysis/dataset/"
+```
 
 ## Workflow Orchestration
 
