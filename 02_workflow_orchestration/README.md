@@ -154,7 +154,7 @@ Navigate back to [Airflow's web UI](http://localhost:8080/home), and execute DAG
 
 ![Execute Terraform Init](/images/terraform_init.gif)
 
-This DAG can be inspected [here](./dags/01_terraform_init.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/init.sh), which basically navigates to the Terraform directory on the container and performs `terraform init`.
+This DAG can be inspected [here](./dags/01_terraform_init.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/init.sh), which navigates to the Terraform directory on the container and performs `terraform init`.
 
 We have now initialized the Terraform working directory
 
@@ -162,7 +162,7 @@ We have now initialized the Terraform working directory
 
 Execute DAG 02_terraform_apply from the Airflow homepage.
 
-This DAG can be inspected [here](./dags/02_terraform_apply_infra.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/apply.sh), which basically navigates to the Terraform directory on the container and performs `terraform apply`.
+This DAG can be inspected [here](./dags/02_terraform_apply_infra.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/apply.sh), which navigates to the Terraform directory on the container and performs `terraform apply`.
 
 We have now created a GCS bucket, and two BigQuery datasets for our needs.
 
