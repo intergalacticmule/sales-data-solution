@@ -63,7 +63,7 @@ Now you should have the service up and running at http://localhost:8888. You can
 Make sure you adjust the file dowload path below to reflect your filesystem before running the notebook:
 
 ```python
-zip_dir = "/home/intergalacticmule/repos/sales-data-analysis/dataset/"
+zip_dir = "/home/intergalacticmule/repos/sales-data-solution/01_dataset/"
 ```
 
 ## Workflow Orchestration
