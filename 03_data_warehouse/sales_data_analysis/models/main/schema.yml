@@ -96,7 +96,7 @@ models:
         description: Name of the payment method
 
   - name: dim_sales_channels
-    description: List of unique sales_channels identified by sales_channel_id
+    description: List of unique sales channels identified by sales_channel_id
     columns:
       - name: sales_channel_id
         data_type: int
@@ -105,7 +105,7 @@ models:
             severity: error
         - not_null:
             severity: error
-        description: ID of the sales_channel
+        description: ID of the sales channel
 
       - name: sales_channel_name
         data_type: string
@@ -114,5 +114,30 @@ models:
               severity: error
           - not_null:
               severity: error
-        description: Name of the sales_channel
+        description: Name of the sales channel
+
+
+  - name: dim_sales_reps
+    description: List of unique sales representatives identified by sales_rep_id
+    columns:
+      - name: sales_rep_id
+        data_type: int
+        tests:
+        - unique:
+            severity: error
+        - not_null:
+            severity: error
+        description: ID of the sales representative
+
+      - name: sales_rep_name
+        data_type: string
+        tests:
+          - unique:
+              severity: error
+          - not_null:
+              severity: error
+        description: Name of the sales representative
+
+
+  
   
