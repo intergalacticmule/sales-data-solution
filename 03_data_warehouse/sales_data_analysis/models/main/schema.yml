@@ -72,5 +72,26 @@ models:
           - not_null:
               severity: error
         description: Name of the customer type
+  
 
+  - name: dim_payment_methods
+    description: List of unique payment methods identified by payment_method_id
+    columns:
+      - name: payment_method_id
+        data_type: int
+        tests:
+        - unique:
+            severity: error
+        - not_null:
+            severity: error
+        description: ID of the payment method
+
+      - name: payment_method_name
+        data_type: string
+        tests:
+          - unique:
+              severity: error
+          - not_null:
+              severity: error
+        description: Name of the payment method
   
