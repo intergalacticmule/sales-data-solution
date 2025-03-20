@@ -16,56 +16,56 @@ models:
         columns:
           - name: Product_ID
             data_type: string
-            description: "Product ID"
+            description: ID of product
 
           - name: Sale_Date
             data_type: date
-            description: "Date of sale"
+            description: Date of sale
 
           - name: Sales_Rep
             data_type: string
-            description: "Sales representative name"
+            description: Sales representative name
 
           - name: Region
             data_type: string
-            description: "Region where sale was made"
+            description: Region where sale was made
           
           - name: Sales_Amount
             data_type: decimal
-            description: "Amount of sale"
+            description: Amount of sale
           
           - name: Quantity_Sold
             data_type: int
-            description: "Number of items sold"
+            description: Number of items sold
           
           - name: Product_Category
             data_type: string
-            description: "Category of product"
+            description: Category of product
           
           - name: Unit_Cost
             data_type: decimal
-            description: "Cost per unit"
+            description: Cost per unit
           
           - name: Unit_Price
             data_type: decimal
-            description: "Price per unit"
+            description: Price per unit
           
           - name: Customer_Type
             data_type: string
-            description: "Type of Customer"
+            description: Type of Customer
           
           - name: Discount
             data_type: decimal
-            description: "Discount percent"
+            description: Discount percent
           
           - name: Payment_Method
             data_type: string
-            description: "Method of payment"
+            description: Method of payment
           
           - name: Sales_Channel
             data_type: string
-            description: "Channel of Sale"
+            description: Channel of Sale
           
           - name: Region_and_Sales_Rep
             data_type: string
-            description: "Sales representative name and region"
+            description: Sales representative name and region
