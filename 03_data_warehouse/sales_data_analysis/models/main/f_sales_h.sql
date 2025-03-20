@@ -28,7 +28,7 @@ select
     Discount as discount,
     payment_methods.payment_method_id,
     sales_channels.sales_channel_id
-from {{ source('staging', 'st_sales_data') }} st
+from {{ ref('st_sales_data') }} st
 join {{ ref('dim_sales_reps') }} as sales_reps
     on st.Region_and_Sales_Rep = split(sales_reps.sales_rep_name, ' ')[offset(1)] || '-' || split(sales_reps.sales_rep_name, ' ')[offset(0)]
 join {{ ref('dim_regions') }} as regions
