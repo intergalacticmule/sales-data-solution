@@ -6,7 +6,7 @@
             "data_type": "date",
             "granularity": "day"
         },
-        cluster_by =[
+        cluster_by = [
             "sales_rep_id",
             "region_id",
             "product_category_id",
