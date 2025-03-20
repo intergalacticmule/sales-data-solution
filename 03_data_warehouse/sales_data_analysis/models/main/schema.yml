@@ -1,12 +1,5 @@
 version: 2
 
-sources:
-  - name: staging
-    schema: sales_dataset_staging
-    tables:
-      - name: st_sales_data
-        description: Sales data staging table
-
 models:
   - name: dim_customer_types
     description: List of unique customer types identified by customer_type_id
