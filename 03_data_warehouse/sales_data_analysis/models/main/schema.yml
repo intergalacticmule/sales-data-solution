@@ -140,5 +140,89 @@ models:
         description: Name of the sales representative
 
 
-  
-  
+  - name: f_sales_h
+    description: Sales history fact table
+    columns:
+      - name: sale_date
+        data_type: date
+        tests:
+          - not_null:
+              severity: error
+        description: Date of Sale
+
+      - name: sales_rep_id
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: ID of the sales representative
+
+      - name: region_id
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: ID of the region
+
+      - name: sales_amount
+        data_type: decimal
+        tests:
+          - not_null:
+              severity: error
+        description: Amount of sale
+
+      - name: quantity_sold
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: Number of items sold
+
+      - name: product_category_id
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: ID of the product category
+
+      - name: unit_cost
+        data_type: decimal
+        tests:
+          - not_null:
+              severity: error
+        description: Cost per unit
+
+      - name: unit_price
+        data_type: decimal
+        tests:
+          - not_null:
+              severity: error
+        description: Price per unit
+
+      - name: customer_type_id
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: ID of the customer type
+
+      - name: discount
+        data_type: decimal
+        tests:
+          - not_null:
+              severity: error
+        description: Discount percent
+
+      - name: payment_method_id
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: ID of the payment method
+
+      - name: sales_channel_id
+        data_type: int
+        tests:
+          - not_null:
+              severity: error
+        description: ID of the sales channel
