@@ -19,7 +19,7 @@ models:
           - not_null:
               severity: error
         description: ID of the region
-        
+
       - name: region_name
         data_type: string
         tests:
@@ -29,5 +29,26 @@ models:
               severity: error
         description: Name of the region
 
+
+  - name: dim_product_categories
+    description: List of unique product categories identified by product_category_id
+    columns:
+      - name: product_category_id
+        data_type: int
+        tests:
+        - unique:
+            severity: error
+        - not_null:
+            severity: error
+        description: ID of the product category
+
+      - name: product_category_name
+        data_type: string
+        tests:
+          - unique:
+              severity: error
+          - not_null:
+              severity: error
+        description: Name of the product category
 
   
