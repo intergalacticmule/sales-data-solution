@@ -11,7 +11,7 @@ destination_dir = "/home/airflow/files/GCP/sales_data/"
 file_name_zipped = "sales_data.zip"
 file_name_unzipped = file_name_zipped.replace("zip", "csv")
 creds = "/home/airflow/terraform/keys/my-creds.json"
-bucket_name = "sales_data_analysis_bucket"
+bucket_name = "sales_dataset_bucket"
 
 def create_dir(dir):
     try:

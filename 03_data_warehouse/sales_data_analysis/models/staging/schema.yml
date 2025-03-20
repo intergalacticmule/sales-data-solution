@@ -2,12 +2,12 @@ version: 2
 
 sources:
   - name: staging
-    schema: staging
+    schema: sales_dataset_staging
     tables:
       - name: ext_sales_data
         description: Sales data external table                 
         external:
-          location: 'gs://sales_data_analysis_bucket/*'
+          location: 'gs://sales_dataset_bucket/*'
           options:
             format: csv
 models:

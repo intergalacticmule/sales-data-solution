@@ -41,6 +41,6 @@ models:
       relation: true
       columns: true
     staging:
-      +schema: staging
-    core:
-      +schema: sales_data_analysis_dataset
+      +schema: sales_dataset_staging
+    main:
+      +schema: sales_dataset_main

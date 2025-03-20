@@ -20,13 +20,13 @@ variable "location" {
 
 variable "bq_datasets" {
   description = "My First BigQuery Datasets"
-  default     = ["sales_data_analysis_dataset", "staging"]
+  default     = ["sales_dataset_staging", "sales_dataset_main"]
 }
 
 
 variable "gcs_bucket_name" {
   description = "My Storage Bucket"
-  default     = "sales_data_analysis_bucket"
+  default     = "sales_dataset_bucket"
 }
 
 variable "gcs_storage_class" {

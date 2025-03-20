@@ -13,7 +13,7 @@ provider "google" {
   region      = var.region
 }
 
-resource "google_storage_bucket" "sales-data-analysis-bucket" {
+resource "google_storage_bucket" "sales-data-bucket" {
   name          = var.gcs_bucket_name
   location      = var.location
   force_destroy = true
@@ -28,7 +28,7 @@ resource "google_storage_bucket" "sales-data-analysis-bucket" {
   }
 }
 
-resource "google_bigquery_dataset" "sales-data-analysis-dataset" {
+resource "google_bigquery_dataset" "sales-data-dataset" {
   dataset_id = "${var.bq_datasets[count.index]}"
   count = length("${var.bq_datasets}")
   location   = var.location
