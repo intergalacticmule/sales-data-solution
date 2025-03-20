@@ -19,15 +19,15 @@ models:
           - not_null:
               severity: error
         description: ID of the region
-
+        
       - name: region_name
         data_type: string
-        description: Name of the region
         tests:
           - unique:
               severity: error
           - not_null:
               severity: error
+        description: Name of the region
 
 
   
