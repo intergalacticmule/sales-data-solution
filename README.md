@@ -36,7 +36,7 @@ To find out how to install Docker Engine, please visit https://docs.docker.com/e
 
 ### Docker Compose 
 
-Depending on your OS and/or your installation method of choice, you might need to install Docker Compose. Please visit https://docs.docker.com/compose/install/ to learn more.
+Depending on your OS and/or installation method of choice, you might need to install Docker Compose. Please visit https://docs.docker.com/compose/install/ to learn more.
 
 ## The Dataset
 
