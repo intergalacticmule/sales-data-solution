@@ -14,3 +14,4 @@ select
   row_number() over ()as region_id,
   region_name
 from regions
+order by 1
