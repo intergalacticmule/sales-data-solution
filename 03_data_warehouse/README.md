@@ -235,4 +235,36 @@ Finished running 8 table models, 36 data tests in 0 hours 1 minutes and 11.82 se
 Completed successfully
 ```
 
-We have now build our data warehouse model. Let us move on to building some [dashboards](../README.md#dashboards).
+## dbt Docs
+
+You may have noticed that we have been documenting our coulmn names, data types, descriptions, and data quality tests in our `schema.yml` files. This is because dbt supports document generation based on those files.
+
+These documents include but are not limited to the above information. They also contain info on any macros and packages used in the project.
+
+If you would like to generate the docs for our project, make sure to instal dbt-core locally first:
+
+```bash
+pip install dbt-core
+```
+
+Now navitage to directory `.../sales-data-solution/03_data_warehouse/sales_data_warehouse/` and run:
+
+```bash
+dbt docs generate
+```
+
+This will generate the documents server files.
+
+Now run:
+
+```bash
+dbt docs serve --port XXXX #Replace 'XXXX' with the port you would like to have the docs served on. Make sure the port is not used by anything else.
+```
+
+You will now be redirected to a browser window where you can browse the documentation at your leisure.
+
+There is a nifty data lineage feature that can help us display the process of building the data warehouse graphically in the bottom right corner of the docs page. Our dbt workflow looks like this:
+
+![dbt workflow diagram](../images/dbt_workflow_diagram.png)
+
+We have now successfully built our data warehouse model. Let us move on to building some [dashboards](../README.md#dashboards).
