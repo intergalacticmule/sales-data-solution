@@ -881,7 +881,7 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
-<p>Let us now move on to <a href="../README.md#workflow-orchestration">orchestrating our pipeline</a><p>.
+<p>Let us now move on to <a href="../README.md#workflow-orchestration">orchestrating our pipeline</a>.<p>
 </main>
 </body>
 </html>
