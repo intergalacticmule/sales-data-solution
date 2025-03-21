@@ -161,7 +161,7 @@ project: sales-data-analysis-453808 #Your project ID here
 
 Navigate back to [Airflow's web UI](http://localhost:8080/home), and execute DAG `01_terraform_init`:
 
-![Execute Terraform Init](/images/terraform_init.gif)
+![Execute Terraform Init](/images/airflow_start_dag.gif)
 
 This DAG can be inspected [here](./dags/01_terraform_init.py). It consists of a BashOperator task that calls [this bash script](./scripts/terraform/init.sh), which navigates to the Terraform directory on the container and performs `terraform init`.
 
