@@ -256,7 +256,7 @@ This will generate the documents server files.
 Now run:
 
 ```bash
-dbt docs serve --port XXXX #Replace 'XXXX' with the port you would like to have the docs served on. Make sure the port is not used by anything else.
+dbt docs serve --port XXXX #Replace 'XXXX' with an unused port you would like to have the docs served on
 ```
 
 You will now be redirected to a browser window where you can browse the documentation at your leisure.
