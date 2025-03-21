@@ -60,7 +60,10 @@ This leaves us with the following folder structure:
 │   ├── 01_terraform_init.py #DAG that performs terraform init
 │   ├── 02_terraform_raise_infra.py #DAG that performs terraform apply
 │   ├── 03_upload_data_to_gcp.py #DAG that retrieves source file and uploads it to GCP
-│   └── terraform_destroy_infra.py #DAG that performs terraform destroy
+│   ├── 04_dbt_init.py #DAG that tests dbt connection and installs packages
+│   ├── 05_dbt_stage_source_file.py #DAG that uses dbt to create an external table from source file
+│   ├── 06_dbt_build.py #DAG that builds data warehouse model
+│   └── 07_terraform_destroy_infra.py #DAG that performs terraform destroy
 ├── dbt #dbt-core folder
 │   ├── .user.yml #dbt cookie
 │   ├── my-creds.json #dbt service account
@@ -71,9 +74,15 @@ This leaves us with the following folder structure:
 ├── plugins #Airflow plugins folder
 ├── README.md #git README file
 ├── scripts #scripts folder
-│   ├── terraform_apply.sh #bash script used by DAG to run terraform apply command
-│   ├── terraform_destroy.sh #bash script used by DAG to run terraform apply command
-│   └── terraform_init.sh #bash script used by DAG to run terraform apply command
+│   ├── dbt #dbt scripts folder
+│   │   ├── build.sh #bash script that runs dbt build command
+│   │   ├── debug.sh #bash script that runs dbt debug command
+│   │   ├── deps.sh #bash script that runs dbt deps command
+│   │   └── stage_external_sources.sh #bash script that runs dbt run-operation stage_external_sources command
+│   └── terraform #terraform scripts folder
+│       ├── apply.sh #bash script that runs terraform apply
+│       ├── destroy.sh #bash script that runs terraform destroy
+│       └── init.sh #bash script that runs terraform init
 └── terraform #Terraform folder
     ├── keys #keys folder
     │   └── my-creds.json #Airflow service account key file
