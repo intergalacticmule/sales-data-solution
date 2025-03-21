@@ -179,7 +179,7 @@ We have now created a GCS bucket, and two BigQuery datasets for our needs.
 
 Execute DAG `03_upload_data_to_gcp` from the Airflow homepage.
 
-This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage.
+This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage:
 
 ![airflow upload data dag](../images/airflow_upload_data_dag.png)
 
