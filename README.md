@@ -87,3 +87,5 @@ Here we use the fourth and fifth points of our [Action Plan](#action-plan) - Big
 We will stage the file we previously uploaded to GCS in an external BigQuery table, then perform all of our data transformations on top to create the warehouse model using dbt, all with the help of a few more Airflow DAGs.
 
 Please refer to [Data Warehouse](./03_data_warehouse/README.md) for a detailed explanation of the work performed, and how to reproduce it.
+
+## Dashboards
