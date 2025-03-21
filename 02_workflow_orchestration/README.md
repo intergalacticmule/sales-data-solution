@@ -172,4 +172,4 @@ Execute DAG 03_upload_data_to_gcp from the Airflow homepage.
 
 This DAG can be inspected [here](./dags/03_upload_data_to_gcp.py). It consists of predefined functions that create our local working directory, download our data file, unzip it, upload it to GCP and verify that it was successful, and then clean up locally. These functions are executed via PythonOperator tasks one after the other, automating the entire process of data retrieval and storage.
 
-We now have our source file securely stored on the cloud. Our goals for this section are thus complete. Let's move on to [setting up our Data Warehouse](../README.md#data-warehouse)
+We now have our source file securely stored on the cloud. Our goals for this section are thus complete. Let us now move on to [setting up our Data Warehouse](../README.md#data-warehouse).
