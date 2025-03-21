@@ -50,7 +50,7 @@ Before we begin implementing our solution, we must first inspect the dataset to 
 
 The above document can also be found as a notebook [here](./01_dataset/dataset_exploration.ipynb). 
 
-Keep in mind that in order to be able to run the notebook, you must first have _Python_ installed on your machine with _pip_ as the default package manager. Then you can install Jupyter Notebook:
+In order to be able to run the notebook, you must first have Python installed on your machine with pip as the default package manager. Then you can install Jupyter Notebook:
 
 ```bash 
 $ pip install notebook
@@ -64,7 +64,7 @@ $ jupyter notebook
 
 Now you should have the service up and running at http://localhost:8888. You can navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb), download it, and load it locally from the Jupyter Notebook Web UI.
 
-Make sure you adjust the file dowload path below to reflect your filesystem before running the notebook:
+Make sure you adjust the file dowload path in the notebook below to reflect your filesystem before running it:
 
 ```python
 zip_dir = "/home/intergalacticmule/repos/sales-data-solution/01_dataset/"
@@ -74,10 +74,16 @@ zip_dir = "/home/intergalacticmule/repos/sales-data-solution/01_dataset/"
 
 In this part of the solution, we apply the first four points of the [Action Plan](#action-plan), namely Docker, Apache Airflow, Terraform, and Google Cloud Storage.
 
-We will also be installing and setting up dbt on our Docker image in this section, but we will not be using it just yet.
+We will create a dockerized Airflow image that includes an installation of Terraform. We will also install and set up dbt on it in this section, but we will not be using it just yet.
+
+Then we will set up our Google Cloud infrastructure, and upload the data to GCS using Airflow DAGs.
 
 Please refer to [Workflow Orchestration](./02_workflow_orchestration/README.md) for a detailed explanation of the work performed, and how to reproduce it.
 
 ## Data Warehouse
 
-Here we will use dbt and BigQuery for our data transformation and warehousing needs.
+Here we use the fourth and fifth points of our [Action Plan](#action-plan) - BigQuery and dbt to help with our data transformation and warehousing needs.
+
+We will stage the file we previously uploaded to GCS in an external BigQuery table, then perform all of our data transformations on top to create the warehouse model using dbt, all with the help of a few more Airflow DAGs.
+
+Please refer to [Data Warehouse](./03_data_warehouse/README.md) for a detailed explanation of the work performed, and how to reproduce it.
