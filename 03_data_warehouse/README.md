@@ -24,7 +24,7 @@ This DAG can be inspected [here](../02_workflow_orchestration/dags/04_dbt_init.p
 
 Execute DAG `05_dbt_stage_source_file` from the Airflow homepage.
 
-This DAG can be inspected [here](../02_workflow_orchestration/dags/05_dbt_stage_source_file.py). It consists of a single BashOperator task that calls [this bash script](../02_workflow_orchestration/scripts/dbt/stage_external_sources.sh), which navigates to the dbt project directory on the container and performs `dbt run-operation stage_external_sources`. This is from the package we previously mentioned which stages our source file in an external table by using the external table we described as a source in [./sales_data_warehouse/models/staging/schema.yml](./sales_data_warehouse/models/staging/schema.yml).
+This DAG can be inspected [here](../02_workflow_orchestration/dags/05_dbt_stage_source_file.py). It consists of a single BashOperator task that calls [this bash script](../02_workflow_orchestration/scripts/dbt/stage_external_sources.sh), which navigates to the dbt project directory on the container and performs `dbt run-operation stage_external_sources`. This is the utility derived from the package we previously mentioned. It stages our source file in an external table by using the external table we described as a source in [./sales_data_warehouse/models/staging/schema.yml](./sales_data_warehouse/models/staging/schema.yml).
 
 ### Build Data Warehouse model
 
