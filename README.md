@@ -30,6 +30,10 @@ The diagram below provides a high-level visual representation of the solution we
 
 ## Prerequisites
 
+### Google Cloud Account
+
+Please visit https://cloud.google.com/ in order to set up your Google Cloud account.
+
 ### Docker Engine
 
 To find out how to install Docker Engine, please visit https://docs.docker.com/engine/install/.
@@ -73,3 +77,7 @@ In this part of the solution, we apply the first four points of the [Action Plan
 We will also be installing and setting up dbt on our Docker image in this section, but we will not be using it just yet.
 
 Please refer to [Workflow Orchestration](./02_workflow_orchestration/README.md) for a detailed explanation of the work performed, and how to reproduce it.
+
+## Data Warehouse
+
+Here we will use dbt and BigQuery for our data transformation and warehousing needs.
