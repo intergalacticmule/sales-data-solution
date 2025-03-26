@@ -78,6 +78,8 @@ from customer_types
 order by 1
 ```
 
+We are delibierately ignoring column Product_ID here, because we cannot build a meaningful dimension from it given the lack of product names.
+
 Once all the dimension tables are built, dbt will build our final model - the historical fact table `f_sales_h`. We are aiming for 3NF here, so we will be joining all our dimension tables with the staging table by their respective dimension names, and pulling out their dimension IDs instead:
 
 ```sql
