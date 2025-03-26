@@ -132,7 +132,7 @@ We have partitioned the table by `sale_date`, and clustered it by `sales_rep_id`
 
 ### Running tests
 
-dbt will finally run all tests specified in [./sales_data_warehouse/models/main/schema.yml](./sales_data_warehouse/models/main/schema.yml) to ensure required data quality is met.
+Once all tables have been created, dbt will run all tests specified in [./sales_data_warehouse/models/main/schema.yml](./sales_data_warehouse/models/main/schema.yml) to ensure required data quality is met.
 
 The entire process of building our data warehouse and performing data quality testing can be seen in detail if we follow dbt's console output in our Airflow DAG's log:
 
