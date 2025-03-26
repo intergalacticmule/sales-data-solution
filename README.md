@@ -64,7 +64,7 @@ $ jupyter notebook
 
 Now you should have the service up and running at http://localhost:8888. You can navigate to the download location of the [notebook](./01_dataset/dataset_exploration.ipynb), download it, and load it locally from the Jupyter Notebook Web UI.
 
-Make sure you adjust the file dowload path in the notebook below to reflect your filesystem before running it:
+Make sure you adjust the file dowload path in the notebook below to reflect your file system before running it:
 
 ```python
 zip_dir = "/home/intergalacticmule/repos/sales-data-solution/01_dataset/"
