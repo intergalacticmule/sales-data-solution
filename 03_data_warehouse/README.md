@@ -10,15 +10,15 @@ In the previous section we did a little bit of set-up for dbt, but now we will s
 
 ### Initiallize dbt
 
-1. Navigate to [Airflow UI](http://localhost:8080/home)
+1. Navigate to [Airflow Web UI](http://localhost:8080/home)
 
 2. Execute DAG `04_dbt_init` from the Airflow homepage
 
 This DAG can be inspected [here](../02_workflow_orchestration/dags/04_dbt_init.py). It consists of two BashOperator tasks - `dbt_debug` and `dbt_deps`:
 
-- `dbt_debug` - this task calls [this bash script](../02_workflow_orchestration/scripts/dbt/debug.sh), which navigates to the dbt project directory on the container and performs `dbt debug`. What this command does is it tests the database connection to make sure everything is working fine.
+-   `dbt_debug` - this task calls [this bash script](../02_workflow_orchestration/scripts/dbt/debug.sh), which navigates to the dbt project directory on the container and performs `dbt debug`. What this command does is it tests the database connection to make sure everything is working fine.
 
-- `dbt_deps` - this task calls [this bash script](../02_workflow_orchestration/scripts/dbt/deps.sh), which navigates to the dbt project directory on the container and performs `dbt deps`. What this command does is it installs the dependencies listed in [packages.yml](./sales_data_warehouse/packages.yml). In our case we have used the `dbt_external_tables` package, which helps us stage our source file in an external table.
+-   `dbt_deps` - this task calls [this bash script](../02_workflow_orchestration/scripts/dbt/deps.sh), which navigates to the dbt project directory on the container and performs `dbt deps`. What this command does is it installs the dependencies listed in [packages.yml](./sales_data_warehouse/packages.yml). In our case we have used the `dbt_external_tables` package, which helps us stage our source file in an external table.
 
 ### Stage source file in external table
 
@@ -32,9 +32,9 @@ Execute DAG `06_dbt_build` from the Airflow homepage.
 
 This DAG can be inspected [here](../02_workflow_orchestration/dags/06_dbt_build.py). It consists of a single BashOperator task that calls [this bash script](../02_workflow_orchestration/scripts/dbt/build.sh), which navigates to the dbt project directory on the container and performs `dbt build`. This will build our entire Data Warehouse model.
 
-## Data Warehouse model 
+## Data Warehouse model
 
-Our data warehouse is comprised of two areas - `sales_dataset_staging` and `sales_dataset_main`. The main area depends on the staging area. By executing DAG `06_dbt_build`, we will be building upon the external table we created in DAG `05_dbt_stage_source_file`. 
+Our data warehouse is comprised of two areas - `sales_dataset_staging` and `sales_dataset_main`. The main area depends on the staging area. By executing DAG `06_dbt_build`, we will be building upon the external table we created in DAG `05_dbt_stage_source_file`.
 
 ### Building the `sales_dataset_staging` area
 
@@ -42,7 +42,7 @@ dbt will, because of the above dependency, build the model defined in [./sales_d
 
 Examining [./sales_data_warehouse/models/staging/schema.yml](./sales_data_warehouse/models/staging/schema.yml), we can see that we have defined the external table `sales_dataset_staging.ext_sales_data` as a source for the model `sales_dataset_staging.st_sales_data`.
 
-The idea here is to create a native table partitioned by Sale_Date that mirrors the external table's data, upon which to build our warehose. This is achieved by dbt building model [st_sales_data](./sales_data_warehouse/models/staging/st_sales_data.sql) first. 
+The idea here is to create a native table partitioned by Sale_Date that mirrors the external table's data, upon which to build our warehose. This is achieved by dbt building model [st_sales_data](./sales_data_warehouse/models/staging/st_sales_data.sql) first.
 
 ### Building the `sales_dataset_main` area
 
@@ -66,7 +66,7 @@ Each dimension table is built by fetching the respective distinct dimension valu
 }}
 
 with customer_types as (
-    select 
+    select
         distinct(Customer_Type) as customer_type_name
     from {{ ref('st_sales_data') }}
 )
