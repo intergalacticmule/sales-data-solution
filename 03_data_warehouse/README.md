@@ -128,6 +128,8 @@ join {{ ref('dim_sales_channels') }} as sales_channels
     on st.Sales_Channel =  sales_channels.sales_channel_name
 ```
 
+We have partitioned the table by `sale_date`, and clustered it by `sales_rep_id`, `region_id`, `product_category_id`, and `customer_type_id`. Additional clustering for the remaining ID columns would have been beneficial, but currently BigQuery support clustering of tables by up to 4 columns.
+
 ### Running tests
 
 dbt will finally run all tests specified in [./sales_data_warehouse/models/main/schema.yml](./sales_data_warehouse/models/main/schema.yml) to ensure required data quality is met.
