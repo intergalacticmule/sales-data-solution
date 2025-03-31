@@ -1,5 +1,9 @@
 # <div align="center">Sales Data Warehousing & Analysis</div>
 
+This project is developed as the final assignment of [DataTalksClub's Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) for cohort 2025.
+
+The project requirements can be viewed [here](https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/projects).
+
 ## Problem Definition
 
 As a data engineerig/analytics contractor, we have been approached by a new retailer store company that lack a solution for storing and analyzing their sales data for 2023. They want us to help them build an end-to-end solution around their data set, and to assist in analyzing and optimizing their data.
