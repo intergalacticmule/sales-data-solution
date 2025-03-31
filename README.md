@@ -102,6 +102,6 @@ Please refer to [Dashboards](./04_dashboards/README.md) in order to view created
 
 ## Teardown of GCP resources
 
-If you are done with running the project and wish to tear down all the GCP resources we created, simply go to [Airflow's web UI](http://localhost:8080/home), and execute DAG ``07_terraform_destroy_infra.py``
+If you are done with running the project and wish to tear down all the GCP resources we created, simply go to [Airflow's web UI](http://localhost:8080/home), and execute DAG `07_terraform_destroy_infra.py`.
 
 This DAG can be inspected [here](./02_workflow_orchestration/dags/07_terraform_destroy_infra.py). It consists of a BashOperator task that calls [this bash script](./02_workflow_orchestration/scripts/terraform/destroy.sh), which navigates to the Terraform directory on the container and performs `terraform destroy`.
