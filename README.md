@@ -93,3 +93,15 @@ We will stage the file we previously uploaded to GCS in an external BigQuery tab
 Please refer to [Data Warehouse](./03_data_warehouse/README.md) for a detailed explanation of the work performed, and how to reproduce it.
 
 ## Dashboards
+
+Lastly, for our dashboards, we will be using the sixth point of the [Acton Plan](#action-plan) - Looker Studio.
+
+We will create a data source from our fact table, and blend that with our dimension tables in order to make coherent graphs.
+
+Please refer to [Dashboards](./04_dashboards/README.md) in order to view created dashboards.
+
+## Teardown of GCP resources
+
+If you are done with running the project and wish to tear down all the GCP resources we created, simply go to [Airflow's web UI](http://localhost:8080/home), and execute DAG ``07_terraform_destroy_infra.py``
+
+This DAG can be inspected [here](./02_workflow_orchestration/dags/07_terraform_destroy_infra.py). It consists of a BashOperator task that calls [this bash script](./02_workflow_orchestration/scripts/terraform/destroy.sh), which navigates to the Terraform directory on the container and performs `terraform destroy`.
